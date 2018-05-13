@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>龙大侠</title>
-    <link>www.biglong.top/</link>
+    <link>https://www.biglong.top/</link>
     <description>Recent content on 龙大侠</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 Nov 2017 12:21:21 -0500</lastBuildDate>
     
-	<atom:link href="www.biglong.top/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.biglong.top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lofter 摄影</title>
-      <link>www.biglong.top/projects/photography/</link>
+      <link>https://www.biglong.top/projects/photography/</link>
       <pubDate>Mon, 13 Nov 2017 12:21:21 -0500</pubDate>
       
-      <guid>www.biglong.top/projects/photography/</guid>
+      <guid>https://www.biglong.top/projects/photography/</guid>
       <description>有时会拿起相机拍上两张 平时出去旅游或者生活中碰到有意思的场景会拍一些图片上传到 Lofter ，不过工作后也很久没有拍东西了。</description>
     </item>
     
     <item>
       <title>简书笔记</title>
-      <link>www.biglong.top/projects/writing/</link>
+      <link>https://www.biglong.top/projects/writing/</link>
       <pubDate>Mon, 13 Nov 2017 12:21:11 -0500</pubDate>
       
-      <guid>www.biglong.top/projects/writing/</guid>
+      <guid>https://www.biglong.top/projects/writing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>随笔-写在2018年的母亲节</title>
-      <link>www.biglong.top/blog/20180513-%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.biglong.top/blog/20180513-%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>www.biglong.top/blog/20180513-%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.biglong.top/blog/20180513-%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F%E8%AE%B0%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>www.biglong.top/contact/</link>
+      <link>https://www.biglong.top/contact/</link>
       <pubDate>Thu, 09 Mar 2017 13:23:28 +0800</pubDate>
       
-      <guid>www.biglong.top/contact/</guid>
+      <guid>https://www.biglong.top/contact/</guid>
       <description>海内存知己，天涯若比邻
 期待志同道合的小伙伴一起上车玩耍</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>www.biglong.top/about/</link>
+      <link>https://www.biglong.top/about/</link>
       <pubDate>Thu, 09 Mar 2017 13:19:25 +0800</pubDate>
       
-      <guid>www.biglong.top/about/</guid>
+      <guid>https://www.biglong.top/about/</guid>
       <description> 
 码农一枚，梦想是改变世界。
 爱好摄影与敲码，周末喜欢读一二本小说，打三四场游戏，做五六组俯卧撑。
