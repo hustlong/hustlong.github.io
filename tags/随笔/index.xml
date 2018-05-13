@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on 龙大侠</title>
+    <link>/tags/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on 龙大侠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 13 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>写在2018母亲节</title>
+      <link>/blog/2018-05-13-%E5%86%99%E5%9C%A82018%E6%AF%8D%E4%BA%B2%E8%8A%82/</link>
+      <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-05-13-%E5%86%99%E5%9C%A82018%E6%AF%8D%E4%BA%B2%E8%8A%82/</guid>
+      <description>待补坑。。。</description>
+    </item>
+    
+    <item>
+      <title>定个小目标——数据结构</title>
+      <link>/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为多数情况的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计。
+为什么想起来学数据结构 作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为大多数情况下的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计，这导致一个人非常容易走进舒适区并且很难再走出来。这对自己的职业成长是非常不利的。记得之前看到过关于学习的四个成长阶段： 1. 不知道自己不知道 2. 知道自己不知道 3. 知道自己知道 4. 不知道自己知道
+很多刚刚入门的程序员还处在第一个阶段，尤其是野生的程序员，可能先学三个月的IDE快速开发，能够做基本的业务，刷一刷常见面试题就上岗去了。在这里并不是说野生程序员能力不行，笔者本人也是半路出身，大二开始自学Java，然后做Android开发，之前大一主要学c和c++，做嵌入式硬件开发，做过虚拟仪器、单片机、fpga、画过pcb，作为机械大类的工科男，还敲过锤子打过铁，制作收音机以及小音箱，还有各种机床操作，这画风不忍直视。。。其实，野生程序员最值得肯定的一点就是超级强的自学能力，自我充电的能力和热情。但是根据我两年的自学经历来讲，野生要想成长为大牛，需要非常非常的努力并且和机智的头脑。 作为一名野生战五渣，就不具体讨论大牛之路了，毕竟我也在朝着目标不断努力，还在路上。这也是我要先系统学习数据结构的原因，本系列文章将主要记录我在学习过程中的笔记，一些概念，想法等等。
+怎么学习这本书 我经常会读到一些资源帖之类的文章，标贴多诸如《程序员必看十篇》，《java开发书籍推荐》等等，对于这些，我以前都是收入囊中，点击收藏，mark，有时候还尽量下载到本地储存起来，现在回顾看来，以上这些统统不推荐！阅读经典教材，并做好笔记，而且尽量一次只准备一到两本书放在学习库里面，实际经历告诉我一次性准备很多书籍并无卵用，只是一时激情作祟啊！！都是泪。 本次学习选取的便是众人推荐过严蔚敏的《数据结构》，作为经典教材，决定一边读书一边写笔记。
+准备用多长时间 额。。完全不晓得啊～虽然工作时间很弹性，由于本人惰性太大，经常下班回去之后依然会刷刷微博，看看视频，然后看书的时间就没有了。。。至于这篇文章也是预计一周之前要写的，然后拖到现在才写，哈哈哈。。。 so，还是定个小目标吧。这本书共有12章分别是：
+ 绪论（目测就是一些概念性的东西吧。） 线性表 栈和队列 串（这个竟然没听过。。） 数组和广义表 树和二叉树（这个要好好看看～） 图 动态存储管理 查找 内部排序 外部排序（以上三章估计要结合算法来学习） 文件  好了，就是这些了！大概准备三周的时间来学习吧。整理一下博客发现竟然小半年都没写过东西了，真想好好忏悔一下。毕竟舒适区太舒服了～摔～ 自问自答结束。 以上</description>
+    </item>
+    
+    <item>
+      <title>我为什么不用百度解决bug</title>
+      <link>/blog/2016-08-16-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E7%99%BE%E5%BA%A6%E8%A7%A3%E5%86%B3bug/</link>
+      <pubDate>Tue, 16 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2016-08-16-%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E7%99%BE%E5%BA%A6%E8%A7%A3%E5%86%B3bug/</guid>
+      <description>选择用百度来解决bug，一定是脑子进了水。 ——记一次难忘的bug调试经历。
+问题描述： 开发环境是Android Studio，在做一个智能硬件的客户端APP。 今天做到在线升级部分，添加一个UpdateHelper类，单独做成一个Module，在引用R资源时，发现没有自动生成R文件，之前也遇到过这种情况，一般来说就是资源文件有错误，R文件不能生成，但是这个Module里面我只放了两张png资源图，排除资源错误问题。好吧。。。这种bug的确让人头疼。之后尝试修改文件名、Clean、 Rebuild 、Make 等等，都是扯淡。。。
+好吧。。然后我打开了Baidu（百毒），输入关键词
+ Android Module 生成 R
+ 然而，这出来的都是什么结果啊？其实乍一看结果还可以吧，毕竟都和关键词相关，然而内容真的是就像“宝宝的宝宝的宝宝不是宝宝亲生的” ［捂脸］。。。
+好吧，既然结果都搜出来了，我们就读读看吧，反正“来都来了”：
+ 答案一：AndroidStudio library module的R文件报错 - - 博客频道 - CSDN.NET
+ 错误的内容主要是case R.styleable.这两句报错，一开始我还以为是library module的R文件没有生成。 又是clean project又是rebuild project.都没用。后来我发现TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.GradientIconView); 这句没有报错，原来是我把问题定位错了，问题不是R文件没有生成，而是case R.styleable.这句有问题。
+天哪，允许我做一个悲伤的表情😢。。。这。。。和 Module 生成 R 文件 有半毛钱的关系？
+ 答案二：android studio新建Module不生成build文件夹 - JustDoItToday的&amp;hellip;
+ 这个题目终于看上去靠谱点了！我们来看一下原文：
+噗～真的是一口老血喷你脸上，😢，天哪，当创建第五个时不会生成Build文件夹，妈勒个蛋，这个到底是为什么啊？Why？最关键的是：竟然有人在下面评论：
+噗～大兄弟，你真的解决了嘛？
+其他的就不继续列觉了，这逼装的简直刺眼。。。
+于是，楼主默默的打开Google。
+哇塞！第一个结果貌似就是我想要的啊！我点进去看看～
+ Android Studio don&amp;rsquo;t generate R.java for my import project
+ 看到这第一个答案，其实我的问题就快解决了。然后我 File -&amp;gt; Settings -&amp;gt; Compiler now check use external build ，妈蛋啊，没有这个选项呀？不带这样玩的啊。。。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="记录生活">
+
+<base href="/">
+<title>
+
+
+     数据结构——概念和术语 
+
+</title>
+<link rel="canonical" href="/blog/2017-02-27-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+
+
+    <link rel="stylesheet" href="css/light-style.css">
+
+
+
+
+
+
+<link rel="shortcut icon" href="img/biglong.ico">
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="section" id="top">
+
+    <div class="container hero ">
+    <h1 class="bold-title is-1">BigLong.Top</h1>
+    </div>
+
+
+<div class="section ">
+
+    <div class="container">
+    <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">首页</a>
+      </span>
+      
+      <span class="nav-item">
+        <a href="/blog"> 笔记
+          
+        </a>
+      </span>
+      
+
+      <span class="nav-item">
+        <a href="/#about">我</a>
+      </span>
+
+      <span class="nav-item">
+        <a href="/#contact">联系</a>
+      </span>
+    
+      <span class="nav-item">
+        <a href="/index.xml"><i class="fa fa-rss"></i></a>
+      </span>
+    
+    </div>
+</nav>
+<hr>
+
+    </div>
+
+    <div class="container ">
+        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/2017-02-27-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD/">数据结构——概念和术语</a></h2>
+            <div class="post-data">
+                Feb 27, 2017 | 阅读时间 1 分钟
+            </div>
+
+            
+
+    </div>
+
+    <div class="container markdown  top-pad">
+        
+
+<p>认识和理解数据结构里面的概念和术语很重要，这篇主要就是在通读课本第一章绪论之后作的简要笔记。</p>
+
+<h2 id="概念和术语">概念和术语</h2>
+
+<ul>
+<li><strong>数据(data)</strong> 对客观事物的符号表示，在计算机科学中是指所有能输入到计算机中并被计算机程序处理的符号总称，其含义非常广泛，如图像、声音都可以通过编码而归之于数据的范畴</li>
+<li><strong>数据元素(data element)</strong> 数据的基本单位，在计算机程序中有时候也作为整体进行考虑和处理。数据元素也可以由若干个<strong>数据项(data item)</strong>组成，如一本书的书目信息是一个数据元素，而信息中每一项（作者、书名等）都是一个数据项，数据项是数据不可分割的最小单位。</li>
+<li><strong>数据对象(data object)</strong> 性质相同的数据元素的集合，是数据的一个子集。</li>
+<li><strong>数据结构(data structure)</strong> 相互之间存在的一种或多种特定的关系数据元素的集合。通常有以下四种常见数据结构：1.集合 2.线性结构 3.树形结构 4.图状结构或网状结构</li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-757ef6d2e6c520f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="常见数据结构(data structure)" /></p>
+
+<ul>
+<li><p>数据结构是一个二元组：<strong>Data_Structure = (D,S)</strong>,其中D是数据元素的有限集，S是D上关系的有限集。</p></li>
+
+<li><p>数据结构在计算机中存储称为数据的<strong>物理结构</strong>，又称为<strong>存储结构</strong>，包括数据元素的表示和关系的表示。数据元素之间的关系在计算机中有两种不同的表示方法，分别是：<strong>顺序映像</strong>和<strong>非顺序映像</strong>，并由此得到两种不同的存储结构：<strong>顺序存储结构</strong>和<strong>链式存储结构</strong>，前者(图1.6.a)是借助元素在存储器中的相对位置表示元素之间的逻辑关系，后者(图1.6.b)借助指示元素存储地址的<strong>指针(pointer)</strong>表示数据元素之间的逻辑关系。</p></li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-ed85af93c778f9ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="复数存储结构示意图" /></p>
+
+<ul>
+<li><p><strong>算法(aigorithm)</strong>是对特定问题求解步骤的一种描述，它是指令的有限序列，具有5个非常重要的特性：(1) <strong>有穷性</strong> 在合法输入值下，算法执行有穷步之后结束，并每一步都可以有穷时间内完成。(2) <strong>确定性</strong> 任何条件下算法只有唯一的一条执行路径，即对于相同的输入只能得到相同的输出。(3) <strong>可行性</strong> 算法中描述的操作都是可以通过已经实现的基本运算执行有限次实现的。 (4) <strong>输入</strong> 一个算法会有零个或若干个输入。(5) <strong>输出</strong> 一个算法会有一个或若干个输出，这些输出同输入有着某种特定关系。</p></li>
+
+<li><p><strong>算法设计的要求：</strong> 正确性(correctness) + 可读性(readability) + 健壮性(robustness) + 效率与低存储量需求。（ps：感觉又学了不少英文单词呢。。。）</p></li>
+
+<li><p><strong>算法效率的度量：</strong>
+(1) 事后统计：一看就不是什么正经方法😄，这种方法误差性太大，和硬件运行环境等关系太大。一般都不用这个。
+(2) 事前统计：1. 算法策略 2.问题规模 3.算法语言(一般语言越高级，效率越低) 4.编译机器代码的质量 5.机器指令的执行速度</p></li>
+
+<li><p><strong>时间复杂度</strong>
+问题规模记为n，算法基本操作执行的重复次数记为f(n),则随着规模n的增大，执行时间的增长率和f(n)的增长率一致，称为算法的<strong>渐进时间复杂度</strong>(asymptotic time complexity)：<strong>T(n) = O(f(n))</strong>
+eg.
+(a) {++x;}
+(b) for(i=1;i&lt;=n;i++) {++x;}
+&copy; for(j=1;j&lt;=n;j++)  for(k=1;k&lt;=n;k++)  {++x;}
+以上三段程序的时间复杂度分别为：O(1),O(n),O(n^2)，分别称为常量阶、线性阶、平方阶。当然还有其他的对数阶O(log n) 和指数阶O(2^n)等。</p></li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-0cc2d49790f5ffda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不同数量级时间复杂度性状" /></p>
+
+<p>有些算法的时间复杂度难以确定，对于多项式可以只取<strong>增长最快的项</strong>，例如对于(n-1)(n-2)／2，可以只取n^2。另外对于一些算法，f(n)还会随着输入的数据不同而变化。例如冒泡排序，此时可以用<strong>平均时间复杂度</strong>（不推荐），推荐分析最坏情况下的时间复杂度。</p>
+
+<ul>
+<li><strong>空间复杂度(space complexity)</strong>
+记为：<strong>S(n) = O(f(n))</strong>
+一段代码本身要占用存储空间，包括指令、常数、变量、输入数据等，此外还需要某些辅助空间。假设输入数据所占空间与算法无关，分析除了输入和程序本身之外的额外空间。如果额外空间对于输入数据来说是个常数，则称此算法为<strong>原地工作</strong>。如果所占空间依赖于输入，则计算最坏情况下的空间复杂度。（这段话很饶舌有木有，其实就是说你的算法在忽略自身存储需求和输入数据的存储需求之外，这个空间的大小，就酱。）</li>
+</ul>
+
+<h2 id="小记">小记</h2>
+
+<p>第一章主要是一些概念和术语，是入门数据结构的基础，因此必须要仔细读一遍，在这里，我也是在阅读过程中记录一些比较重要的概念，还有很多细节需要读课本。1.3小节的抽象数据类型的表示与实现没有记录，主要是介绍了类C语言。
+读绪论差不多用了三天的零碎时间吧，一边看一边记笔记，效果还可以。
+该文是用markdown格式写的，还没有用过的可以搜搜相关资料，推荐有时间可以学习一下，目测十几分钟就学会了。之前还创建了一个公众号wulierdan（wuli二蛋），取了个这么蛋疼的名字。。。关注之后就可以定期接受推送咯，一起学习，共同进步。</p>
+
+    </div>
+
+    <div class="disqus">
+        
+    </div>
+
+<div class="container has-text-centered top-pad">
+  <hr>
+  <a href="/blog/2017-02-27-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD/#top"><i class="fa fa-arrow-up"></i></a>
+  <hr>
+</div>
+
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+            皖ICP备18009137号  BIGLONG.TOP © 2018-2019
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/2017-02-27-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>

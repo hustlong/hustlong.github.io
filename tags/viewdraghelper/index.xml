@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Viewdraghelper on 龙大侠</title>
+    <link>/tags/viewdraghelper/</link>
+    <description>Recent content in Viewdraghelper on 龙大侠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/viewdraghelper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>实现View滑动的七种方法</title>
+      <link>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
+      <description>Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
+Android坐标系 在介绍如何实现View滑动之前先了解一下Android的坐标系，我们在初中数学就学过坐标系，有原点和X轴Y轴，不过屏幕上的坐标系稍微有点区别，移动设备一般将屏幕的左上角定义为原点，向右为X轴正方向，向下为Y轴正方向，如下图：
+View坐标系 与屏幕坐标系相同，View也有自己的坐标系，我们可以称之为视图坐标系，描述了本身和父布局的位置关系，原点在View的左上角：
+View及MotionEvent坐标获取  View自身坐标获取方法
+  getTop()：获取到的，是view自身的顶边到其父布局顶边的距离
+ getLeft()：获取到的，是view自身的左边到其父布局左边的距离
+ getRight()：获取到的，是view自身的右边到其父布局左边的距离
+ getBottom()：获取到的，是view自身的底边到其父布局顶边的距离
+   MotionEvent坐标获取
+  getX()：获取点击事件相对控件左边的x轴坐标，即点击事件距离控件左边的距离
+ getY()：获取点击事件相对控件顶边的y轴坐标，即点击事件距离控件顶边的距离
+ getRawX()：获取点击事件相对整个屏幕左边的x轴坐标，即点击事件距离整个屏幕左边的距离
+ getRawY()：获取点击事件相对整个屏幕顶边的y轴坐标，即点击事件距离整个屏幕顶边的距离
+  说了这么多方法都不如一张图最直接：原图链接
+触控事件onTouch 学好触控事件是掌握后续内容的重要基础，触控事件回调的MotionEvent封装了一些常用的事件常量，定义了一些常见类型动作。
+/** * A pressed gesture has started, the motion contains the initial starting location. */ public static final int ACTION_DOWN = 0; /** * A pressed gesture has finished, the motion contains the final release location as well as any intermediate * points since the last down or move event.</description>
+    </item>
+    
+  </channel>
+</rss>

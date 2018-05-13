@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>物联网 on 龙大侠</title>
+    <link>/tags/%E7%89%A9%E8%81%94%E7%BD%91/</link>
+    <description>Recent content in 物联网 on 龙大侠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 15 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初识 Android Things（0x01）</title>
+      <link>/blog/2017-04-15-%E5%88%9D%E8%AF%86-android-things0x01/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017-04-15-%E5%88%9D%E8%AF%86-android-things0x01/</guid>
+      <description>谷歌推出的 Things 物联网操作系统也有小半年时间了，刚刚推出的时候就开始了解相关资料，跃跃欲试，不过工作原因一直没来得及，现在转眼已是小半年时间了，现在出发也不晚，老司机，走起～
+Android Things 是什么  Build connected devices for a wide variety of consumer, retail, and industrial applications
+ 2016年12月，谷歌发布了物联网操作系统 Android Things，Things 可以说是 Android 系统的一个分支。结合谷歌为物联网设备推出的通讯协议Weave，Android Things将在谷歌物联网战略中发挥重要作用。
+Things 的前身是谷歌于2015年发布的物联网底层操作系统 Brillo，Brillo 源于Android，是对Android底层的一个细化，得到了Android的全部支持，比如蓝牙、Wifi等技术，并且能耗很低，安全性很高，任何设备制造商都可以直接使用，是一个完全端到端的应用。
+不同的是，Brillo把C++作为主要开发环境，它的开发和部署明显不同于常规Android开发，因此这对于 Android 开发者并不友好，而Android Things则面向所有Java开发者，不管开发者有没有移动开发经验，有经验更容易上手，Android Things系统支持原始Android SDK中的一个子集，开发环境就用 Android Studio，后面再详细演示第一个Android Things 工程。
+Things的优势 The ease and power of Android  If you can build an app, you can build a device
+  The Android ecosystem Leverage existing Android development tools, APIs, resources, and a thriving developer community.</description>
+    </item>
+    
+  </channel>
+</rss>

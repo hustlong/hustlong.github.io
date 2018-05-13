@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>调试bug on 龙大侠</title>
+    <link>/tags/%E8%B0%83%E8%AF%95bug/</link>
+    <description>Recent content in 调试bug on 龙大侠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%B0%83%E8%AF%95bug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android应用启动瞬间白屏</title>
+      <link>/blog/2017-04-17-android%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E7%9E%AC%E9%97%B4%E7%99%BD%E5%B1%8F/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017-04-17-android%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E7%9E%AC%E9%97%B4%E7%99%BD%E5%B1%8F/</guid>
+      <description>Android App 启动白屏问题，老司机当然不会允许自己的应用出现这种情况！
+问题 遇到用户反映在打开app的时候有大概不到一秒钟的白屏时间，无论怎样优化启动Activity ，这个白屏时间都无法避免（也有可能是黑屏）。这个问题不简单啊！然后果断去尝试启动一些比较成熟的应用，例如，摩拜、咸鱼、得到、WhatsApp、Quora、 等等都有白屏问题（其中摩拜是黑屏问题）。不过微信、qq、百度云、微博都没有这个问题，ofo小黄车也没有白屏问题，哈哈哈。
+那么问题来了？
+到底是什么原因导致了这个白屏or黑屏时间？
+解决 先去搜索引擎找一下答案，第一个搜索结果就解决了这个问题。
+之前的启动页就是按照普通的Activity思路去写的，如下：
+/** * Created by biglong on 2017/4/17. */ public class SplashActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_splash); //据说，不推荐这种写法，容易内存泄漏 new Handler().postDelayed( new Runnable() { @Override public void run() { startActivity(new Intent(SplashActivity.this ,MainActivity.class)); finish(); } }, 1000 ); } }  问题可能就出现在方法 setContentView 上。我们按照 博客 上面的方法来重新设计该启动页:
+创建 XML Drawable #在 res/drawable/ 里面 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="记录生活">
+
+<base href="/">
+<title>
+
+
+     RecycleView实现的地区选择模块 
+
+</title>
+<link rel="canonical" href="/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+
+
+    <link rel="stylesheet" href="css/light-style.css">
+
+
+
+
+
+
+<link rel="shortcut icon" href="img/biglong.ico">
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="section" id="top">
+
+    <div class="container hero ">
+    <h1 class="bold-title is-1">BigLong.Top</h1>
+    </div>
+
+
+<div class="section ">
+
+    <div class="container">
+    <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">首页</a>
+      </span>
+      
+      <span class="nav-item">
+        <a href="/blog"> 笔记
+          
+        </a>
+      </span>
+      
+
+      <span class="nav-item">
+        <a href="/#about">我</a>
+      </span>
+
+      <span class="nav-item">
+        <a href="/#contact">联系</a>
+      </span>
+    
+      <span class="nav-item">
+        <a href="/index.xml"><i class="fa fa-rss"></i></a>
+      </span>
+    
+    </div>
+</nav>
+<hr>
+
+    </div>
+
+    <div class="container ">
+        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/">RecycleView实现的地区选择模块</a></h2>
+            <div class="post-data">
+                Sep 21, 2016 | 阅读时间 2 分钟
+            </div>
+
+            
+
+    </div>
+
+    <div class="container markdown  top-pad">
+        
+
+<p>最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。</p>
+
+<p>感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 <del>公举</del> 工具推荐哦）。</p>
+
+<p>　　 先上图看一下效果：</p>
+
+<p><img src="https://github.com/hustlong/RegionSelector/blob/master/files/regionSelector_demo.gif?raw=true" alt="RegionSelector.gif" /></p>
+
+<p>　　讲一下思路：结构很简单，点击第一个activity的设置地区，开启第二个activity，同时把已经选择的地区传值，格式为<strong>“省份　城市　地区”</strong>（没有引号），然后地区设置完成后setResult就可以了。地区activity选择用RecycleView实现。</p>
+
+<pre><code class="language-java">AActivity &lt;----------------onActivityResult()
+|                                        |
+startActivityForResult()                 |
+|                                        |
+BActivity----------&gt;setResult()----------&gt;
+</code></pre>
+
+<h2 id="布局">布局</h2>
+
+<p>　　和使用ListView差不多，不同的是RecycleView并没有item点击事件，因此这个需要自己实现，这个后面会讲到。ok，第一步实现item布局和ViewHolder，分析一下item需要展示的内容：首先是<strong>地名</strong>，还有就是后面有没有<strong>已选择</strong>，不要忽略item的点击事件。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-f3f3144856d1fda5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="item_region_layout.png" /></p>
+
+<p>xml布局如下：</p>
+
+<pre><code class="language-xml">&lt;RelativeLayout
+    android:id=&quot;@+id/item_btn&quot;  &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/item_tv&quot;  /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/checked&quot; /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+
+<p>ViewHolder如下：</p>
+
+<pre><code class="language-java">public class RegionViewHolder extends RecyclerView.ViewHolder {
+    public TextView textView;
+    public TextView checked;
+    public ViewGroup itemBtn;
+
+    public RegionViewHolder(View itemView) {
+        super(itemView);
+        initView();
+    }
+
+    private void initView() {
+        textView = (TextView) itemView.findViewById(R.id.item_tv);
+        checked = (TextView) itemView.findViewById(R.id.checked);
+        itemBtn = (ViewGroup) itemView.findViewById(R.id.item_btn);
+    }
+}
+</code></pre>
+
+<h2 id="adapter适配">Adapter适配</h2>
+
+<p>　　我们的adapter要继承RecyclerView.Adapter，并且实现该抽象类的几个重要方法：</p>
+
+<pre><code class="language-java">public class RegionAdapter extends RecyclerView.Adapter&lt;RegionViewHolder&gt; {
+
+    private List&lt;String&gt; itemList;//用于存放要展示的数据列表
+    private String checkedStr;//当前选中的地区
+    private Context context;
+    private LayoutInflater layoutInflater;
+    private OnItemClickListener listener;//回调点击事件
+
+    public RegionAdapter(Context context) {
+        this.context = context;
+        layoutInflater = LayoutInflater.from(context);
+    }
+
+    /* 更新数据并展示 */
+    public void setData(List&lt;String&gt; itemList,String checkedStr) {
+        this.itemList = itemList;
+        this.checkedStr = checkedStr;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public RegionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new RegionViewHolder(layoutInflater.inflate(R.layout.item_region_layout,parent,false));
+    }
+
+    @Override
+    public void onBindViewHolder(final RegionViewHolder holder, final int position) {
+        holder.textView.setText(itemList.get(position));
+        holder.checked.setVisibility(checkedStr.equals(itemList.get(position))? View.VISIBLE:View.GONE);
+        holder.itemBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null)
+                    listener.onItemClick(holder,position);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return isEmpty(itemList) ? 0 : itemList.size();
+    }
+
+    private  &lt;D&gt; boolean isEmpty(List&lt;D&gt; list) {
+        return (list == null || list.isEmpty());
+    }
+
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(RegionViewHolder holder, int position);
+    }
+
+}
+</code></pre>
+
+<h2 id="regionactivity实现">RegionActivity实现</h2>
+
+<p>　　在最开始的时，本来是想省份做一个activity，城市一个activity，然后地区一个，这样的话代码利用率太低，最好的办法还是在一个activity里实现，其实就是定义了一个curPage变量，记录用户当前选择到第几步了：</p>
+
+<h3 id="三个操作阶段">三个操作阶段</h3>
+
+<pre><code class="language-java">switch (curPage) {
+            case PROVINCE://用户选择了某个省份
+                province = itemList.get(position);
+                for (Result result : result_List) {
+                    if (province.equals(result.getProvince()))
+                        city_List = result.getCity();
+                }
+                provinces.clear();
+                provinces.addAll(itemList);
+                itemList.clear();
+                for (City city : city_List) {
+                    if (this.city.equals(city.getCity()))
+                        itemList.add(0,city.getCity());
+                    else
+                        itemList.add(city.getCity());
+                }
+                adapter.setData(itemList,city);
+                curPage++;
+                break;
+
+            case CITY://用户选择了某个城市
+                city = itemList.get(position);
+                for (City city : city_List) {
+                    if (this.city.equals(city.getCity()))
+                        district_List = city.getDistrict();
+                }
+                cities.clear();
+                cities.addAll(itemList);
+                itemList.clear();
+                for (District district : district_List) {
+                    if (this.district.equals(district.getDistrict()))
+                        itemList.add(0,district.getDistrict());
+                    else
+                        itemList.add(district.getDistrict());
+                }
+                adapter.setData(itemList,district);
+                curPage++;
+                break;
+
+            case DISTRICT://用户选择了某个地区
+                district = itemList.get(position);
+                setResult(RESULT_OK,new Intent().putExtra(&quot;result&quot;
+                        ,province + &quot; &quot; + city + &quot; &quot; + district));
+                finish();
+                break;
+        }
+    }
+</code></pre>
+
+<p>　　其实代码一眼就能看清楚，就是三个阶段，到最后一个阶段时就setResult把结果回传过去，不过这里要考虑到如果用户选择到最后一步时，如果想退出去重新选择城市的话，一按返回就退出activity了[捂脸/(ㄒoㄒ)/~~]，所以我们还需要重写onBackPressed：</p>
+
+<h3 id="三个返回阶段">三个返回阶段</h3>
+
+<pre><code class="language-java">    @Override
+    public void onBackPressed() {
+        switch (curPage) {
+            case PROVINCE:
+                finish();
+                break;
+
+            case CITY:
+                itemList.clear();
+                itemList.addAll(provinces);
+                adapter.setData(itemList,province);
+                curPage--;
+                break;
+
+            case DISTRICT:
+                itemList.clear();
+                itemList.addAll(cities);
+                adapter.setData(itemList,city);
+                curPage--;
+                break;
+        }
+    }
+</code></pre>
+
+<h3 id="装载数据">装载数据</h3>
+
+<p>　　补充一下数据的装载，首先把json数据从raw文件夹里面读取出来，然后格式化：</p>
+
+<pre><code class="language-java">try {
+	if (result_List == null) {
+		Gson gson = new Gson();
+		Root root = gson.fromJson(StreamUtils.get(this,R.raw.city), Root.class);
+		result_List = root.getResult();
+	}
+
+	for (Result result : result_List) {
+		if (province.equals(result.getProvince()))
+			itemList.add(0,result.getProvince());
+		else
+			itemList.add(result.getProvince());
+	}
+	adapter.setData(itemList,province);
+} catch (JsonSyntaxException e) {
+	e.printStackTrace();
+}
+</code></pre>
+
+<p>　　这里推荐一个实用的工具，就是json数据格式化工具：<a href="http://www.bejson.com/json2javapojo/">pojo在线</a>
+　　
+<img src="http://upload-images.jianshu.io/upload_images/1815913-2efa181cb4152ccf.gif?imageMogr2/auto-orient/strip" alt="pojo_demo.gif" /></p>
+
+<p>　　顺便再推荐一个Material Design配色工具：<a href="https://www.materialpalette.com/">MaterialPalette在线</a></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-586cb30f5d54397b.gif?imageMogr2/auto-orient/strip" alt="materialpalette.gif" /></p>
+
+<p>　　是不是非常的炫酷实用呢？有了这个还要什么设计狮( ⊙ o ⊙ )！
+　　
+　　最后再看一下项目结构：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1815913-2a6ef4cee81f8701.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="project_structure.png" /></p>
+
+<p><a href="https://github.com/hustlong/RegionSelector/blob/master/files/app-release.apk?raw=true">demo下载地址</a></p>
+
+<p><a href="https://github.com/hustlong/RegionSelector">github项目地址</a></p>
+
+    </div>
+
+    <div class="disqus">
+        
+    </div>
+
+<div class="container has-text-centered top-pad">
+  <hr>
+  <a href="/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/#top"><i class="fa fa-arrow-up"></i></a>
+  <hr>
+</div>
+
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+            皖ICP备18009137号  BIGLONG.TOP © 2018-2019
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>

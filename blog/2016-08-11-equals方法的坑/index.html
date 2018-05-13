@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="记录生活">
+
+<base href="/">
+<title>
+
+
+     equals 方法里面的“坑” 
+
+</title>
+<link rel="canonical" href="/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+
+
+    <link rel="stylesheet" href="css/light-style.css">
+
+
+
+
+
+
+<link rel="shortcut icon" href="img/biglong.ico">
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="section" id="top">
+
+    <div class="container hero ">
+    <h1 class="bold-title is-1">BigLong.Top</h1>
+    </div>
+
+
+<div class="section ">
+
+    <div class="container">
+    <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">首页</a>
+      </span>
+      
+      <span class="nav-item">
+        <a href="/blog"> 笔记
+          
+        </a>
+      </span>
+      
+
+      <span class="nav-item">
+        <a href="/#about">我</a>
+      </span>
+
+      <span class="nav-item">
+        <a href="/#contact">联系</a>
+      </span>
+    
+      <span class="nav-item">
+        <a href="/index.xml"><i class="fa fa-rss"></i></a>
+      </span>
+    
+    </div>
+</nav>
+<hr>
+
+    </div>
+
+    <div class="container ">
+        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/">equals 方法里面的“坑”</a></h2>
+            <div class="post-data">
+                Aug 11, 2016 | 阅读时间 1 分钟
+            </div>
+
+            
+
+    </div>
+
+    <div class="container markdown  top-pad">
+        <p>今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。</p>
+
+<p>先来看一段代码：</p>
+
+<pre><code class="language-java">Integer n1 = new Integer(21);
+Integer n2 = new Integer(21);
+System.out.println(n1 == n2);
+System.out.println(n1.equals(n2));
+</code></pre>
+
+<p>不难知道。前者比较的引用，返回false，后者比较的内容，返回true；</p>
+
+<p>下面，我们自定义一个Student类：</p>
+
+<pre><code class="language-java">class Student {
+	private String name;
+	private int age;
+
+	public Student(String name,int age) {
+		this.name = name;
+		this.age = age;
+	}
+}
+</code></pre>
+
+<p>省略掉了setter和getter，然后我们再来new两个对象比较一下：</p>
+
+<pre><code class="language-java">Student s1 = new Student(&quot;Big&quot;,21);
+Student s2 = new Student(&quot;Big&quot;,21);
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+</code></pre>
+
+<p>你能猜到打印的结果吗？两个都是false！这就很费解了，为什么equals不好使了呢？这是因为：</p>
+
+<blockquote>
+<p>因为equals()方法默认行为是比较引用，因此在新类中要自己重写equals()方法，否则不可能表现出我们希望的行为。 ——《Thinking in Java》3.7.1</p>
+</blockquote>
+
+<p>OK，到这里我们就发现了原因了，我们在Student类中添加一个equals方法：</p>
+
+<pre><code class="language-java">    public boolean equals(Student s) {
+        if (s != null &amp;&amp; this.name.equals(s.name) &amp;&amp; this.age == s.age)
+            return true;
+        return false;
+    }
+</code></pre>
+
+<p>至此，问题解决，s1.equals(s2) 会返回我们期望的结果。虽然，问题很小，但是不了解equals方法的默认行为的话，这个bug还是很难发现的。</p>
+
+    </div>
+
+    <div class="disqus">
+        
+    </div>
+
+<div class="container has-text-centered top-pad">
+  <hr>
+  <a href="/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/#top"><i class="fa fa-arrow-up"></i></a>
+  <hr>
+</div>
+
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+            皖ICP备18009137号  BIGLONG.TOP © 2018-2019
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>

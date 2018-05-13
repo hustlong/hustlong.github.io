@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="记录生活">
+
+<base href="/">
+<title>
+
+
+     定个小目标——数据结构 
+
+</title>
+<link rel="canonical" href="/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/nunito_sans.css">
+
+
+    <link rel="stylesheet" href="css/light-style.css">
+
+
+
+
+
+
+<link rel="shortcut icon" href="img/biglong.ico">
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="section" id="top">
+
+    <div class="container hero ">
+    <h1 class="bold-title is-1">BigLong.Top</h1>
+    </div>
+
+
+<div class="section ">
+
+    <div class="container">
+    <hr>
+<nav class="nav nav-center">
+    <span id="nav-toggle" class="nav-toggle"  onclick="document.getElementById('nav-menu').classList.toggle('is-active');">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-left nav-menu">
+      <span class="nav-item">
+        <a href="/">首页</a>
+      </span>
+      
+      <span class="nav-item">
+        <a href="/blog"> 笔记
+          
+        </a>
+      </span>
+      
+
+      <span class="nav-item">
+        <a href="/#about">我</a>
+      </span>
+
+      <span class="nav-item">
+        <a href="/#contact">联系</a>
+      </span>
+    
+      <span class="nav-item">
+        <a href="/index.xml"><i class="fa fa-rss"></i></a>
+      </span>
+    
+    </div>
+</nav>
+<hr>
+
+    </div>
+
+    <div class="container ">
+        <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">定个小目标——数据结构</a></h2>
+            <div class="post-data">
+                Feb 24, 2017 | 阅读时间 1 分钟
+            </div>
+
+            
+
+    </div>
+
+    <div class="container markdown  top-pad">
+        
+
+<p>作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为多数情况的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计。</p>
+
+<h2 id="为什么想起来学数据结构">为什么想起来学数据结构</h2>
+
+<p>作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为大多数情况下的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计，这导致一个人非常容易走进舒适区并且很难再走出来。这对自己的职业成长是非常不利的。记得之前看到过关于学习的四个成长阶段：
+1. 不知道自己不知道
+2. 知道自己不知道
+3. 知道自己知道
+4. 不知道自己知道</p>
+
+<p>很多刚刚入门的程序员还处在第一个阶段，尤其是野生的程序员，可能先学三个月的IDE快速开发，能够做基本的业务，刷一刷常见面试题就上岗去了。在这里并不是说野生程序员能力不行，笔者本人也是半路出身，大二开始自学Java，然后做Android开发，之前大一主要学c和c++，做嵌入式硬件开发，做过虚拟仪器、单片机、fpga、画过pcb，作为机械大类的工科男，还敲过锤子打过铁，制作收音机以及小音箱，还有各种机床操作，这画风不忍直视。。。其实，野生程序员最值得肯定的一点就是超级强的自学能力，自我充电的能力和热情。但是根据我两年的自学经历来讲，野生要想成长为大牛，需要非常非常的努力并且和机智的头脑。
+作为一名野生战五渣，就不具体讨论大牛之路了，毕竟我也在朝着目标不断努力，还在路上。这也是我要先系统学习数据结构的原因，本系列文章将主要记录我在学习过程中的笔记，一些概念，想法等等。</p>
+
+<h2 id="怎么学习这本书">怎么学习这本书</h2>
+
+<p>我经常会读到一些资源帖之类的文章，标贴多诸如《程序员必看十篇》，《java开发书籍推荐》等等，对于这些，我以前都是收入囊中，点击收藏，mark，有时候还尽量下载到本地储存起来，现在回顾看来，以上这些统统不推荐！阅读经典教材，并做好笔记，而且尽量一次只准备一到两本书放在学习库里面，实际经历告诉我一次性准备很多书籍并无卵用，只是一时激情作祟啊！！都是泪。
+本次学习选取的便是众人推荐过严蔚敏的<a href="https://book.douban.com/subject/2024655/">《数据结构》</a>，作为经典教材，决定一边读书一边写笔记。</p>
+
+<h2 id="准备用多长时间">准备用多长时间</h2>
+
+<p>额。。完全不晓得啊～虽然工作时间很弹性，由于本人惰性太大，经常下班回去之后依然会刷刷微博，看看视频，然后看书的时间就没有了。。。至于这篇文章也是预计一周之前要写的，然后拖到现在才写，哈哈哈。。。
+so，还是定个小目标吧。这本书共有12章分别是：</p>
+
+<ol>
+<li>绪论（目测就是一些概念性的东西吧。）</li>
+<li>线性表</li>
+<li>栈和队列</li>
+<li>串（这个竟然没听过。。）</li>
+<li>数组和广义表</li>
+<li>树和二叉树（这个要好好看看～）</li>
+<li>图</li>
+<li>动态存储管理</li>
+<li>查找</li>
+<li>内部排序</li>
+<li>外部排序（以上三章估计要结合算法来学习）</li>
+<li>文件</li>
+</ol>
+
+<p>好了，就是这些了！大概准备三周的时间来学习吧。整理一下博客发现竟然小半年都没写过东西了，真想好好忏悔一下。毕竟舒适区太舒服了～摔～
+自问自答结束。
+以上</p>
+
+    </div>
+
+    <div class="disqus">
+        
+    </div>
+
+<div class="container has-text-centered top-pad">
+  <hr>
+  <a href="/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#top"><i class="fa fa-arrow-up"></i></a>
+  <hr>
+</div>
+
+
+<div class="section" id="footer">
+    <div class="container has-text-centered">
+        
+            皖ICP备18009137号  BIGLONG.TOP © 2018-2019
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+$('a[href^="\/blog\/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\/#"]').click(function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    $('html, body').animate({
+    scrollTop: $(target).offset().top
+    }, 500);
+    return false;
+})
+</script>
+
+</body>
