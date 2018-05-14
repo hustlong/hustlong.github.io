@@ -44,6 +44,18 @@
 
 
 
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?af16f5c4c7a8e8929ed5fab578dc947d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
 
 
 </head>
@@ -100,7 +112,10 @@
     <div class="container ">
         <h2 class="title is-1 top-pad strong-post-title"><a href="/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/">equals 方法里面的“坑”</a></h2>
             <div class="post-data">
-                Aug 11, 2016 | 阅读时间 1 分钟
+                Aug 11, 2016
+                <br>目录 [技术文章]
+                <br>标签 [Java 基础知识]
+                <br>字数 [513]
             </div>
 
             
@@ -108,7 +123,8 @@
     </div>
 
     <div class="container markdown  top-pad">
-        <p>今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。</p>
+        <p>今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。
+</p>
 
 <p>先来看一段代码：</p>
 
@@ -157,7 +173,6 @@ System.out.println(s1.equals(s2));
 </code></pre>
 
 <p>至此，问题解决，s1.equals(s2) 会返回我们期望的结果。虽然，问题很小，但是不了解equals方法的默认行为的话，这个bug还是很难发现的。</p>
-
     </div>
 
     <div class="disqus">

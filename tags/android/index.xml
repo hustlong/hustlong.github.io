@@ -17,14 +17,7 @@
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/2017-04-17-android%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E7%9E%AC%E9%97%B4%E7%99%BD%E5%B1%8F/</guid>
-      <description>Android App 启动白屏问题，老司机当然不会允许自己的应用出现这种情况！
-问题 遇到用户反映在打开app的时候有大概不到一秒钟的白屏时间，无论怎样优化启动Activity ，这个白屏时间都无法避免（也有可能是黑屏）。这个问题不简单啊！然后果断去尝试启动一些比较成熟的应用，例如，摩拜、咸鱼、得到、WhatsApp、Quora、 等等都有白屏问题（其中摩拜是黑屏问题）。不过微信、qq、百度云、微博都没有这个问题，ofo小黄车也没有白屏问题，哈哈哈。
-那么问题来了？
-到底是什么原因导致了这个白屏or黑屏时间？
-解决 先去搜索引擎找一下答案，第一个搜索结果就解决了这个问题。
-之前的启动页就是按照普通的Activity思路去写的，如下：
-/** * Created by biglong on 2017/4/17. */ public class SplashActivity extends Activity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_splash); //据说，不推荐这种写法，容易内存泄漏 new Handler().postDelayed( new Runnable() { @Override public void run() { startActivity(new Intent(SplashActivity.this ,MainActivity.class)); finish(); } }, 1000 ); } }  问题可能就出现在方法 setContentView 上。我们按照 博客 上面的方法来重新设计该启动页:
-创建 XML Drawable #在 res/drawable/ 里面 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?</description>
+      <description>&lt;p&gt;Android App 启动白屏问题，老司机当然不会允许自己的应用出现这种情况！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,13 +26,7 @@
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/2017-04-15-%E5%88%9D%E8%AF%86-android-things0x01/</guid>
-      <description>谷歌推出的 Things 物联网操作系统也有小半年时间了，刚刚推出的时候就开始了解相关资料，跃跃欲试，不过工作原因一直没来得及，现在转眼已是小半年时间了，现在出发也不晚，老司机，走起～
-Android Things 是什么  Build connected devices for a wide variety of consumer, retail, and industrial applications
- 2016年12月，谷歌发布了物联网操作系统 Android Things，Things 可以说是 Android 系统的一个分支。结合谷歌为物联网设备推出的通讯协议Weave，Android Things将在谷歌物联网战略中发挥重要作用。
-Things 的前身是谷歌于2015年发布的物联网底层操作系统 Brillo，Brillo 源于Android，是对Android底层的一个细化，得到了Android的全部支持，比如蓝牙、Wifi等技术，并且能耗很低，安全性很高，任何设备制造商都可以直接使用，是一个完全端到端的应用。
-不同的是，Brillo把C++作为主要开发环境，它的开发和部署明显不同于常规Android开发，因此这对于 Android 开发者并不友好，而Android Things则面向所有Java开发者，不管开发者有没有移动开发经验，有经验更容易上手，Android Things系统支持原始Android SDK中的一个子集，开发环境就用 Android Studio，后面再详细演示第一个Android Things 工程。
-Things的优势 The ease and power of Android  If you can build an app, you can build a device
-  The Android ecosystem Leverage existing Android development tools, APIs, resources, and a thriving developer community.</description>
+      <description>&lt;p&gt;谷歌推出的 Things 物联网操作系统也有小半年时间了，刚刚推出的时候就开始了解相关资料，跃跃欲试，不过工作原因一直没来得及，现在转眼已是小半年时间了，现在出发也不晚，老司机，走起～&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,22 +35,8 @@ Things的优势 The ease and power of Android  If you can build an app, you can 
       <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
-Android坐标系 在介绍如何实现View滑动之前先了解一下Android的坐标系，我们在初中数学就学过坐标系，有原点和X轴Y轴，不过屏幕上的坐标系稍微有点区别，移动设备一般将屏幕的左上角定义为原点，向右为X轴正方向，向下为Y轴正方向，如下图：
-View坐标系 与屏幕坐标系相同，View也有自己的坐标系，我们可以称之为视图坐标系，描述了本身和父布局的位置关系，原点在View的左上角：
-View及MotionEvent坐标获取  View自身坐标获取方法
-  getTop()：获取到的，是view自身的顶边到其父布局顶边的距离
- getLeft()：获取到的，是view自身的左边到其父布局左边的距离
- getRight()：获取到的，是view自身的右边到其父布局左边的距离
- getBottom()：获取到的，是view自身的底边到其父布局顶边的距离
-   MotionEvent坐标获取
-  getX()：获取点击事件相对控件左边的x轴坐标，即点击事件距离控件左边的距离
- getY()：获取点击事件相对控件顶边的y轴坐标，即点击事件距离控件顶边的距离
- getRawX()：获取点击事件相对整个屏幕左边的x轴坐标，即点击事件距离整个屏幕左边的距离
- getRawY()：获取点击事件相对整个屏幕顶边的y轴坐标，即点击事件距离整个屏幕顶边的距离
-  说了这么多方法都不如一张图最直接：原图链接
-触控事件onTouch 学好触控事件是掌握后续内容的重要基础，触控事件回调的MotionEvent封装了一些常用的事件常量，定义了一些常见类型动作。
-/** * A pressed gesture has started, the motion contains the initial starting location. */ public static final int ACTION_DOWN = 0; /** * A pressed gesture has finished, the motion contains the final release location as well as any intermediate * points since the last down or move event.</description>
+      <description>&lt;p&gt;Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -72,14 +45,11 @@ View及MotionEvent坐标获取  View自身坐标获取方法
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/</guid>
-      <description>最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。
-感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 公举 工具推荐哦）。
-　先上图看一下效果：
-　讲一下思路：结构很简单，点击第一个activity的设置地区，开启第二个activity，同时把已经选择的地区传值，格式为“省份　城市　地区”（没有引号），然后地区设置完成后setResult就可以了。地区activity选择用RecycleView实现。
-AActivity &amp;lt;----------------onActivityResult() | | startActivityForResult() | | | BActivity----------&amp;gt;setResult()----------&amp;gt;  布局 　和使用ListView差不多，不同的是RecycleView并没有item点击事件，因此这个需要自己实现，这个后面会讲到。ok，第一步实现item布局和ViewHolder，分析一下item需要展示的内容：首先是地名，还有就是后面有没有已选择，不要忽略item的点击事件。
-xml布局如下：
-&amp;lt;RelativeLayout android:id=&amp;quot;@+id/item_btn&amp;quot; &amp;gt; &amp;lt;TextView android:id=&amp;quot;@+id/item_tv&amp;quot; /&amp;gt; &amp;lt;TextView android:id=&amp;quot;@+id/checked&amp;quot; /&amp;gt; &amp;lt;/RelativeLayout&amp;gt;  ViewHolder如下：
-public class RegionViewHolder extends RecyclerView.ViewHolder { public TextView textView; public TextView checked; public ViewGroup itemBtn; public RegionViewHolder(View itemView) { super(itemView); initView(); } private void initView() { textView = (TextView) itemView.findViewById(R.id.item_tv); checked = (TextView) itemView.</description>
+      <description>&lt;p&gt;最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
+
+&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。
+
+　　 先上图看一下效果：&lt;/p&gt;</description>
     </item>
     
   </channel>

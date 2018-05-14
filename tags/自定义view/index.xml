@@ -17,22 +17,8 @@
       <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
-Android坐标系 在介绍如何实现View滑动之前先了解一下Android的坐标系，我们在初中数学就学过坐标系，有原点和X轴Y轴，不过屏幕上的坐标系稍微有点区别，移动设备一般将屏幕的左上角定义为原点，向右为X轴正方向，向下为Y轴正方向，如下图：
-View坐标系 与屏幕坐标系相同，View也有自己的坐标系，我们可以称之为视图坐标系，描述了本身和父布局的位置关系，原点在View的左上角：
-View及MotionEvent坐标获取  View自身坐标获取方法
-  getTop()：获取到的，是view自身的顶边到其父布局顶边的距离
- getLeft()：获取到的，是view自身的左边到其父布局左边的距离
- getRight()：获取到的，是view自身的右边到其父布局左边的距离
- getBottom()：获取到的，是view自身的底边到其父布局顶边的距离
-   MotionEvent坐标获取
-  getX()：获取点击事件相对控件左边的x轴坐标，即点击事件距离控件左边的距离
- getY()：获取点击事件相对控件顶边的y轴坐标，即点击事件距离控件顶边的距离
- getRawX()：获取点击事件相对整个屏幕左边的x轴坐标，即点击事件距离整个屏幕左边的距离
- getRawY()：获取点击事件相对整个屏幕顶边的y轴坐标，即点击事件距离整个屏幕顶边的距离
-  说了这么多方法都不如一张图最直接：原图链接
-触控事件onTouch 学好触控事件是掌握后续内容的重要基础，触控事件回调的MotionEvent封装了一些常用的事件常量，定义了一些常见类型动作。
-/** * A pressed gesture has started, the motion contains the initial starting location. */ public static final int ACTION_DOWN = 0; /** * A pressed gesture has finished, the motion contains the final release location as well as any intermediate * points since the last down or move event.</description>
+      <description>&lt;p&gt;Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,14 +27,11 @@ View及MotionEvent坐标获取  View自身坐标获取方法
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/</guid>
-      <description>最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。
-感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 公举 工具推荐哦）。
-　先上图看一下效果：
-　讲一下思路：结构很简单，点击第一个activity的设置地区，开启第二个activity，同时把已经选择的地区传值，格式为“省份　城市　地区”（没有引号），然后地区设置完成后setResult就可以了。地区activity选择用RecycleView实现。
-AActivity &amp;lt;----------------onActivityResult() | | startActivityForResult() | | | BActivity----------&amp;gt;setResult()----------&amp;gt;  布局 　和使用ListView差不多，不同的是RecycleView并没有item点击事件，因此这个需要自己实现，这个后面会讲到。ok，第一步实现item布局和ViewHolder，分析一下item需要展示的内容：首先是地名，还有就是后面有没有已选择，不要忽略item的点击事件。
-xml布局如下：
-&amp;lt;RelativeLayout android:id=&amp;quot;@+id/item_btn&amp;quot; &amp;gt; &amp;lt;TextView android:id=&amp;quot;@+id/item_tv&amp;quot; /&amp;gt; &amp;lt;TextView android:id=&amp;quot;@+id/checked&amp;quot; /&amp;gt; &amp;lt;/RelativeLayout&amp;gt;  ViewHolder如下：
-public class RegionViewHolder extends RecyclerView.ViewHolder { public TextView textView; public TextView checked; public ViewGroup itemBtn; public RegionViewHolder(View itemView) { super(itemView); initView(); } private void initView() { textView = (TextView) itemView.findViewById(R.id.item_tv); checked = (TextView) itemView.</description>
+      <description>&lt;p&gt;最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
+
+&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。
+
+　　 先上图看一下效果：&lt;/p&gt;</description>
     </item>
     
   </channel>
