@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>自定义view on 龙大侠</title>
+    <title>自定义View on 龙大侠</title>
     <link>/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/</link>
-    <description>Recent content in 自定义view on 龙大侠</description>
+    <description>Recent content in 自定义View on 龙大侠</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 23 Sep 2016 00:00:00 +0000</lastBuildDate>
@@ -17,8 +17,7 @@
       <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;　　 Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,11 +26,9 @@
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/</guid>
-      <description>&lt;p&gt;最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
+      <description>&lt;p&gt;　　 最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
 
-&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。
-
-　　 先上图看一下效果：&lt;/p&gt;</description>
+&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
     <description>Recent content on 龙大侠</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 Nov 2017 12:21:21 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 13 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -39,8 +39,7 @@
 &lt;p&gt;我不想留在一个地方，也不愿有人跟随。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;这是一篇迟到了4个月的年终总结——2017年终总结！回想这半年已经完成或者正在进行的事，感觉有必要写点东西来总结自上年10月底脱产准备考研到现在即将开学这半年时间里发生的事，希望可以激励自己在全新的2018年继续努力！貌似已经五月份了，有点尴尬。接下来将按照时间倒序来记录这半年的大事记。
-&lt;/p&gt;</description>
+&lt;p&gt;这是一篇迟到了4个月的年终总结——2017年终总结！回想这半年已经完成或者正在进行的事，感觉有必要写点东西来总结自上年10月底脱产考研到现在即将开学这半年时间里发生的事，希望可以激励自己在全新的2018年继续努力！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -49,8 +48,7 @@
       <pubDate>Thu, 29 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/2017-06-29-%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8Ego%E5%AE%9E%E7%8E%B0/</guid>
-      <description>&lt;p&gt;学习Go语言第二周，本周任务尝试实现七大经典排序算法以及分析算法复杂度、优劣及应用场景等，七大经典算法分别为冒泡排序，插入排序，选择排序，希尔排序，归并排序，快速排序，堆排序。
-　　&lt;/p&gt;</description>
+      <description>&lt;p&gt;学习Go语言第二周，本周任务尝试实现七大经典排序算法以及分析算法复杂度、优劣及应用场景等，七大经典算法分别为冒泡排序，插入排序，选择排序，希尔排序，归并排序，快速排序，堆排序。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,7 +107,7 @@
       <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/2017-02-24-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description>&lt;p&gt;作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为多数情况的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计。&lt;/p&gt;</description>
+      <description>&lt;p&gt;　　 作为一名非科班出身的野生程序员，不得不说，在许多基础方面的能力非常的薄弱，虽然很多情况下这并不影响正常的工作，这是因为多数情况的程序工作都是千篇一律的业务代码，很少涉及到更深入的设计。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -118,8 +116,7 @@
       <pubDate>Fri, 23 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-23-%E5%AE%9E%E7%8E%B0view%E6%BB%91%E5%8A%A8%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;　　 Android群英传学习笔记，介绍了android坐标系、视图坐标系、onTouch事件分发、layout方法、scrollBy方法、Scroller、ViewDragHelper 等等内容。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -128,11 +125,9 @@
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-09-21-recycleview%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9C%B0%E5%8C%BA%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9D%97/</guid>
-      <description>&lt;p&gt;最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
+      <description>&lt;p&gt;　　 最近在做的一个项目里，需要在用户个人资料设置页有选择地区功能，看了一些开源的实现方法，大多还停留在底部弹出Dialog的形式。&lt;/p&gt;
 
-&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。
-
-　　 先上图看一下效果：&lt;/p&gt;</description>
+&lt;p&gt;感觉并不友好，微信的地区选择界面是本人比较喜欢的展示形式，地区选择的功能应该算是一个基础功能吧，社交类、外卖类等等APP貌似都需要用户输入地址，选择地区等等，所以就想着自己做一个类似的，不足的是没有加入定位功能，以后还有很多要补充，现在先把这一块功能独立出来做个demo，和大家交流学习一下（文末有实用小 &lt;del&gt;公举&lt;/del&gt; 工具推荐哦）。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -164,8 +159,7 @@
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/</guid>
-      <description>&lt;p&gt;今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。&lt;/p&gt;</description>
     </item>
     
   </channel>

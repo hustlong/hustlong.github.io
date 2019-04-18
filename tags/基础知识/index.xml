@@ -17,8 +17,7 @@
       <pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>/blog/2016-08-11-equals%E6%96%B9%E6%B3%95%E7%9A%84%E5%9D%91/</guid>
-      <description>&lt;p&gt;今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;今天遇到一个比较细节的bug，稍微有点基础的都知道 == 和 equals 的用法，前者用于比较基础数据类型值是否相等，当用于引用类型的时候，一般比较的都是引用地址，因此我们在比较两个对象是否相等时就用后者。然而。。。&lt;/p&gt;</description>
     </item>
     
   </channel>
